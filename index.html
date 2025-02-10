@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ulang Tahun Sayangku</title>
+    <style>
+        body {
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+            color: #5d4954;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            /* Ukuran font lebih kecil untuk mobile */
+            margin-top: 20px;
+            padding: 0 10px;
+            /* Padding untuk menghindari teks terlalu dekat dengan tepi */
+        }
+
+        .gallery {
+            display: flex;
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            margin-top: 20px;
+        }
+
+        .gallery-container {
+            display: flex;
+            animation: slide 30s linear infinite;
+        }
+
+        .gallery img {
+            width: 150px;
+            /* Ukuran gambar lebih kecil untuk mobile */
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            margin-right: 10px;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateX(0);
+            }
+
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .message {
+            font-size: 1.2rem;
+            /* Ukuran font lebih kecil untuk mobile */
+            margin: 20px 10px;
+            /* Margin lebih kecil untuk mobile */
+            padding: 15px;
+            /* Padding lebih kecil untuk mobile */
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        audio {
+            display: none;
+            /* Sembunyikan audio controls */
+        }
+
+        /* Media Query untuk perangkat mobile */
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+                /* Ukuran font lebih kecil untuk layar sangat kecil */
+            }
+
+            .gallery img {
+                width: 120px;
+                /* Ukuran gambar lebih kecil untuk layar sangat kecil */
+                height: 120px;
+            }
+
+            .message {
+                font-size: 1rem;
+                /* Ukuran font lebih kecil untuk layar sangat kecil */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Selamat Ulang Tahun, Sayangku! 🎉</h1>
+    <div class="message">
+        <p>Febry sayang di umur kamu yang bertambah 22 tahun ini aku doain semoga kamu sehat selalu, panjang umur, semua
+            cita cita kamu dan wishlist kamu tercapai yah. Aku tau di umur kamu sekarang kamu kerja dan kuliah jalaninya
+            berat, tapi aku yakin kamu bisa lewati semua. Makasih kamu sampai hari ini masih sama aku. Maafin aku belum
+            bisa jadi pasangan yang baik buat kamu. Tapi aku selalu berusaha menjadi yang terbaik buat kamu dan selalu
+            berjuang buat kamu buat hubungan kita. Love U Sayang 💖</p>
+    </div>
+    <div class="gallery">
+        <div class="gallery-container">
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+            <img src="foto5.jpg" alt="Foto 5">
+            <img src="foto6.jpg" alt="Foto 6">
+            <!-- Duplikat foto untuk efek loop yang mulus -->
+            <img src="foto1.jpg" alt="Foto 1">
+            <img src="foto2.jpg" alt="Foto 2">
+            <img src="foto3.jpg" alt="Foto 3">
+            <img src="foto4.jpg" alt="Foto 4">
+            <img src="foto5.jpg" alt="Foto 5">
+            <img src="foto6.jpg" alt="Foto 6">
+        </div>
+    </div>
+    <audio id="birthdayAudio" loop>
+        <source src="hbd.mp4" type="audio/mpeg">
+        Browser Anda tidak mendukung pemutaran audio.
+    </audio>
+
+    <script>
+        // Fungsi untuk memutar audio secara otomatis
+        function playAudio() {
+            const audio = document.getElementById('birthdayAudio');
+            audio.play().catch(() => {
+                // Jika autoplay diblokir, tampilkan pesan atau minta interaksi pengguna
+                alert('Silakan klik di mana saja di halaman untuk memutar audio.');
+            });
+        }
+
+        // Memutar audio saat halaman selesai dimuat
+        window.addEventListener('load', playAudio);
+
+        // Memutar audio saat pengguna mengklik di mana saja di halaman
+        document.body.addEventListener('click', playAudio);
+    </script>
+</body>
+
+</html>
